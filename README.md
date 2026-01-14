@@ -39,7 +39,8 @@ chmod +x setup_test_environment.sh
 # Install dependencies
 pip install -r requirements.txt
 
-### **Usage**
+
+# Usage
 # Test a single target for Cowrie honeypot
 python detector.py 192.168.1.100 cowrie
 
