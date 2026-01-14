@@ -1,0 +1,155 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260112_050638",
+  "scan_results": {
+    "Banner Analysis": {
+      "banner": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7",
+      "response_time": 0.004817962646484375,
+      "is_known_cowrie": false,
+      "version_too_new": false,
+      "has_debian_string": true,
+      "has_ubuntu_string": false,
+      "banner_length": 38
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "server_banner": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7\r\n\u0000\u0000\u0002T\b\u0014rY\f\u001e\u001asS9\u0352.\u0000\u0000\u0000curve25519-sha256,curve25519-sha256@libss",
+      "kex_init_received": false,
+      "response_length": 633
+    },
+    "Authentication Behavior": {
+      "max_attempts": 7,
+      "auth_exceptions": [],
+      "timing_patterns": [
+        1.0110232830047607,
+        0.00793600082397461,
+        1.0087685585021973,
+        1.0089695453643799,
+        1.0090761184692383,
+        1.0091216564178467,
+        1.0090088844299316
+      ],
+      "consistent_timing": false
+    },
+    "Service Fingerprinting": {
+      "2222": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7\r\n"
+    },
+    "Protocol Anomalies": [
+      "responded_to_invalid_ssh"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 1.0897520041908138e-08,
+      "response_consistency": true,
+      "latency_patterns": [
+        {
+          "connect": 9.369850158691406e-05,
+          "banner": 0.0011284351348876953,
+          "total": 0.0012221336364746094
+        },
+        {
+          "connect": 0.00011157989501953125,
+          "banner": 0.0012867450714111328,
+          "total": 0.001398324966430664
+        },
+        {
+          "connect": 0.00015020370483398438,
+          "banner": 0.0013020038604736328,
+          "total": 0.0014522075653076172
+        },
+        {
+          "connect": 9.1552734375e-05,
+          "banner": 0.001249551773071289,
+          "total": 0.001341104507446289
+        },
+        {
+          "connect": 8.511543273925781e-05,
+          "banner": 0.0014462471008300781,
+          "total": 0.001531362533569336
+        }
+      ]
+    },
+    "Algorithm Testing": {
+      "weak_ssh1_support": false,
+      "no_key_exchange": false
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {},
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": false
+    },
+    "Web Interface Check": {},
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)"
+      }
+    },
+    "Command Execution Test": {
+      "success": true,
+      "username": "root",
+      "password": "password",
+      "commands": {
+        "uname": {
+          "error": "Channel closed."
+        },
+        "id": {
+          "error": "Channel closed."
+        },
+        "pwd": {
+          "error": "Channel closed."
+        },
+        "ls": {
+          "error": "Channel closed."
+        },
+        "ps": {
+          "error": "Channel closed."
+        },
+        "whoami": {
+          "error": "Channel closed."
+        },
+        "fake_command": {
+          "error": "Channel closed."
+        },
+        "honeypot_check": {
+          "error": "Channel closed."
+        }
+      }
+    }
+  },
+  "analysis": {
+    "honeypot_score": 8,
+    "max_score": 23,
+    "confidence": 34,
+    "indicators": [
+      "Excessive login attempts allowed",
+      "Responded to invalid SSH protocol",
+      "Artificial traffic patterns detected",
+      "Command execution successful with default credentials"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 2,
+      "kex_score": 0,
+      "service_score": 0,
+      "protocol_score": 2,
+      "traffic_score": 2,
+      "algo_score": 0,
+      "behavior_score": 0,
+      "web_score": 0,
+      "ssl_score": 0,
+      "cmd_score": 2
+    },
+    "likely_honeypot": true,
+    "certain_honeypot": false
+  }
+}

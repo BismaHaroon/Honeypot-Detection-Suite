@@ -1,0 +1,182 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260112_053302",
+  "scan_results": {
+    "Banner Analysis": {
+      "banner": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7",
+      "response_time": 0.002061605453491211,
+      "is_known_cowrie": true,
+      "version_too_new": false,
+      "has_debian_string": true,
+      "has_ubuntu_string": false,
+      "banner_length": 38,
+      "banner_raw": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7",
+      "suspicious_patterns": 3,
+      "is_exact_match": false
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "server_banner": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7\r\n\u0000\u0000\u0002T\b\u0014!@\u0005\u028cml|h\u001e:\u0000\u0000\u0000curve25519-sha256,curve25519-sha256@libss",
+      "kex_init_received": false,
+      "kex_time": 0.002861499786376953,
+      "banner_time": 0.002861499786376953,
+      "response_length": 633
+    },
+    "Authentication Behavior": {
+      "max_attempts": 5,
+      "auth_exceptions": [],
+      "timing_patterns": [
+        1.011143445968628,
+        0.008155107498168945,
+        1.0088095664978027,
+        1.0088775157928467,
+        1.0089466571807861
+      ],
+      "consistent_timing": false,
+      "all_failed": false
+    },
+    "Service Fingerprinting": {
+      "2222": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7\r\n"
+    },
+    "Protocol Anomalies": [
+      "responded_to_invalid_ssh"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 1.0829617167473771e-08,
+      "response_consistency": true,
+      "latency_patterns": [
+        {
+          "connect": 0.00010204315185546875,
+          "banner": 0.001004934310913086,
+          "total": 0.0011069774627685547
+        },
+        {
+          "connect": 0.0001327991485595703,
+          "banner": 0.0012772083282470703,
+          "total": 0.0014100074768066406
+        },
+        {
+          "connect": 0.0001316070556640625,
+          "banner": 0.0012049674987792969,
+          "total": 0.0013365745544433594
+        },
+        {
+          "connect": 9.441375732421875e-05,
+          "banner": 0.0012388229370117188,
+          "total": 0.0013332366943359375
+        },
+        {
+          "connect": 8.177757263183594e-05,
+          "banner": 0.0012695789337158203,
+          "total": 0.0013513565063476562
+        }
+      ]
+    },
+    "Algorithm Testing": {
+      "weak_ssh1_support": false,
+      "no_key_exchange": false
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {},
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": false
+    },
+    "Web Interface Check": {},
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)"
+      }
+    },
+    "Command Execution Test": {
+      "success": true,
+      "username": "root",
+      "password": "password",
+      "commands": {
+        "uname": {
+          "error": "Channel closed."
+        },
+        "id": {
+          "error": "Channel closed."
+        },
+        "pwd": {
+          "error": "Channel closed."
+        },
+        "ls": {
+          "error": "Channel closed."
+        },
+        "ps": {
+          "error": "Channel closed."
+        },
+        "whoami": {
+          "error": "Channel closed."
+        },
+        "hostname": {
+          "error": "Channel closed."
+        },
+        "df": {
+          "error": "Channel closed."
+        },
+        "fake_command": {
+          "error": "Channel closed."
+        },
+        "honeypot_check": {
+          "error": "Channel closed."
+        },
+        "cowrie_files": {
+          "error": "Channel closed."
+        },
+        "python_check": {
+          "error": "Channel closed."
+        },
+        "process_check": {
+          "error": "Channel closed."
+        }
+      },
+      "suspicious_outputs": [],
+      "cowrie_detected": false
+    }
+  },
+  "analysis": {
+    "honeypot_score": 16,
+    "max_score": 30,
+    "confidence": 53,
+    "indicators": [
+      "Known Cowrie banner pattern",
+      "Contains Debian/Ubuntu string in banner",
+      "Accepted invalid credentials (honeypot behavior)",
+      "Multiple failed login attempts allowed",
+      "Responded to invalid SSH protocol",
+      "Artificial traffic patterns detected",
+      "Command execution successful with default credentials",
+      "Linux TTL detected (common for honeypots)"
+    ],
+    "details": {
+      "banner_score": 3,
+      "auth_score": 3,
+      "kex_score": 0,
+      "service_score": 0,
+      "protocol_score": 2,
+      "traffic_score": 2,
+      "algo_score": 0,
+      "behavior_score": 0,
+      "cmd_score": 3,
+      "web_score": 0,
+      "ssl_score": 0,
+      "ttl_score": 1
+    },
+    "likely_honeypot": true,
+    "certain_honeypot": true,
+    "is_cowrie": true
+  }
+}

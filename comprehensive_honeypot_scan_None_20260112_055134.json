@@ -1,0 +1,317 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260112_055134",
+  "scan_results": {
+    "Banner Analysis": {
+      "banner": "SSH-2.0-OpenSSH",
+      "response_time": 0.0006592273712158203,
+      "is_known_cowrie": false,
+      "version_too_new": false,
+      "has_debian_string": false,
+      "has_ubuntu_string": false,
+      "banner_length": 15,
+      "banner_raw": "SSH-2.0-OpenSSH",
+      "suspicious_patterns": 0,
+      "is_exact_match": false
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "server_banner": "SSH-2.0-OpenSSH\r\n",
+      "kex_init_received": true,
+      "kex_time": 0.0017857551574707031,
+      "banner_time": 0.0016145706176757812,
+      "response_length": 17
+    },
+    "Authentication Behavior": {
+      "max_attempts": 5,
+      "auth_exceptions": [],
+      "timing_patterns": [
+        0.0075931549072265625,
+        0.006379604339599609,
+        0.005970001220703125,
+        0.006127119064331055,
+        0.006094694137573242
+      ],
+      "consistent_timing": true,
+      "all_failed": true
+    },
+    "Service Fingerprinting": {
+      "80": "HTTP/1.0 200 OK\r\nContent-Type: text/html\r\nServer: Apache/2.4.53 (Debian)\r\nX-Powered-By: PHP/7.4.29\r\n",
+      "2222": "SSH-2.0-OpenSSH\r\n",
+      "8080": "HTTP/1.0 401 Unauthorized\r\nServer: Apache\r\nWww-Authenticate: Basic\r\nDate: Mon, 12 Jan 2026 04:51:28 ",
+      "3306": "8.0.29\n"
+    },
+    "Protocol Anomalies": [
+      "responded_to_invalid_ssh"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 4.962112143402918e-10,
+      "response_consistency": true,
+      "latency_patterns": [
+        {
+          "connect": 9.894371032714844e-05,
+          "banner": 0.00019025802612304688,
+          "total": 0.0002892017364501953
+        },
+        {
+          "connect": 0.00012445449829101562,
+          "banner": 0.0001239776611328125,
+          "total": 0.0002484321594238281
+        },
+        {
+          "connect": 9.107589721679688e-05,
+          "banner": 0.00014853477478027344,
+          "total": 0.0002396106719970703
+        },
+        {
+          "connect": 0.00012755393981933594,
+          "banner": 0.00012731552124023438,
+          "total": 0.0002548694610595703
+        },
+        {
+          "connect": 9.083747863769531e-05,
+          "banner": 0.00013065338134765625,
+          "total": 0.00022149085998535156
+        }
+      ],
+      "successful_connections": 5
+    },
+    "Algorithm Testing": {
+      "weak_ssh1_support": false,
+      "no_key_exchange": false
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {
+        "help_command": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "question_mark": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "empty_command": {
+          "error": ""
+        },
+        "cowrie_specific": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "long_output": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        }
+      },
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": true
+    },
+    "Web Interface Check": {
+      "http_80/": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html",
+          "Server": "Apache/2.4.53 (Debian)",
+          "X-Powered-By": "PHP/7.4.29",
+          "Date": "Mon, 12 Jan 2026 04:51:31 GMT",
+          "Content-Length": "115"
+        }
+      }
+    },
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)"
+      }
+    },
+    "Command Execution Test": {
+      "success": true,
+      "username": "root",
+      "password": "root",
+      "commands": {
+        "uname": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "id": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "pwd": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "ls_root": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "ls_etc": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "ps": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "whoami": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "hostname": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "df": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "fake_command": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "cowrie_check": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "python_cowrie": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "env_check": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "honeydb_check": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "cowrie_logs": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        },
+        "cowrie_config": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17,
+          "has_cowrie": false,
+          "line_count": 1
+        }
+      },
+      "cowrie_evidence": [],
+      "suspicious_behaviors": [
+        "Limited root directory (1 items)",
+        "Fake command succeeded (suspicious)"
+      ],
+      "cowrie_detected": false,
+      "evidence_count": 0
+    }
+  },
+  "analysis": {
+    "honeypot_score": 18,
+    "max_score": 30,
+    "confidence": 60,
+    "indicators": [
+      "Multiple failed login attempts allowed",
+      "Artificial timing patterns in authentication",
+      "Multiple services running (common for honeypots)",
+      "Responded to invalid SSH protocol",
+      "Artificial traffic patterns detected",
+      "Accepted default credentials in behavioral test",
+      "Authenticated as root",
+      "2 suspicious shell behaviors",
+      "Web management interface detected",
+      "Linux TTL detected (common for honeypots)"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 0,
+      "kex_score": 0,
+      "service_score": 2,
+      "protocol_score": 2,
+      "traffic_score": 2,
+      "algo_score": 0,
+      "behavior_score": 3,
+      "cmd_score": 3,
+      "web_score": 1,
+      "ssl_score": 0,
+      "ttl_score": 1
+    },
+    "likely_honeypot": true,
+    "certain_honeypot": true,
+    "is_cowrie": false
+  }
+}

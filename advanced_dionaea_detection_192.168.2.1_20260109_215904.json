@@ -1,0 +1,118 @@
+{
+  "target": "192.168.2.1",
+  "timestamp": "20260109_215904",
+  "advanced_analysis": {
+    "advanced_score": 0,
+    "max_score": 50,
+    "confidence": 0,
+    "likelihood": "VERY LOW - Unlikely to be Dionaea",
+    "strong_indicators": [],
+    "weak_indicators": [],
+    "total_indicators": 0
+  },
+  "raw_results": {
+    "Deep Protocol Analysis": {
+      "smb": {
+        "test_0": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "test_1": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "test_2": {
+          "error": "[Errno 111] Connection refused"
+        }
+      },
+      "ftp": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "http": {
+        "GET": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932cd3730>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "POST": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932cd3ee0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "PUT": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932d246a0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "DELETE": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932d24df0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "OPTIONS": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932cd3c70>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "HEAD": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932cd2b00>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "TRACE": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932d252d0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "CONNECT": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932d241c0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        },
+        "weird_headers": {
+          "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932d254e0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        }
+      },
+      "sip": {}
+    },
+    "Memory & Performance": {
+      "connection_timing": [],
+      "concurrent_connections": {
+        "successful": 0,
+        "total": 10
+      }
+    },
+    "Application Fingerprinting": {
+      "http_stack": {
+        "error": "HTTPConnectionPool(host='192.168.2.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f3932cd35e0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+      },
+      "tls": {
+        "443": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "9930": {
+          "error": "[Errno 111] Connection refused"
+        }
+      },
+      "banners": {
+        "21": null,
+        "22": null,
+        "23": null,
+        "80": null,
+        "443": null,
+        "445": null,
+        "9930": null
+      }
+    },
+    "Dionaea-Specific Tests": {
+      "download_directory": "error",
+      "api_endpoints": {
+        "/stats": {
+          "error": "connection failed"
+        },
+        "/files": {
+          "error": "connection failed"
+        },
+        "/connections": {
+          "error": "connection failed"
+        },
+        "/downloads": {
+          "error": "connection failed"
+        },
+        "/api": {
+          "error": "connection failed"
+        }
+      },
+      "vulnerability_emulation": {
+        "ftp_user_overflow": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "http_directory_traversal": {
+          "error": "[Errno 111] Connection refused"
+        }
+      }
+    }
+  }
+}

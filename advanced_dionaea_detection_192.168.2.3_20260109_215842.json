@@ -1,0 +1,181 @@
+{
+  "target": "192.168.2.3",
+  "timestamp": "20260109_215842",
+  "advanced_analysis": {
+    "advanced_score": 16,
+    "max_score": 50,
+    "confidence": 85,
+    "likelihood": "VERY HIGH - Almost certainly Dionaea",
+    "strong_indicators": [
+      "SMB protocol responds to negotiation",
+      "Handles many concurrent connections well",
+      "SMB service responds to negotiation - common in Dionaea",
+      "High concurrent connection success rate - typical for honeypots"
+    ],
+    "weak_indicators": [
+      "Generic server header - could be hiding honeypot",
+      "Responds to ftp_user_overflow without crashing",
+      "Responds to http_directory_traversal without crashing"
+    ],
+    "total_indicators": 7
+  },
+  "raw_results": {
+    "Deep Protocol Analysis": {
+      "smb": {
+        "test_0": {
+          "response_received": true,
+          "response_length": 89,
+          "response_hex": "00000055ff534d427200000000980128",
+          "is_smb_response": false
+        },
+        "test_1": {
+          "error": "timed out"
+        },
+        "test_2": {
+          "response_received": false,
+          "response_length": 0,
+          "response_hex": null,
+          "is_smb_response": false
+        }
+      },
+      "ftp": {
+        "banner": "220 DiskStation FTP server ready.",
+        "command_responses": {
+          "SYST": "530 Please login with USER and PASS.",
+          "FEAT": "530 Please login with USER and PASS.",
+          "HELP": "530 Please login with USER and PASS.",
+          "NOOP": "530 Please login with USER and PASS.",
+          "STAT": "530 Please login with USER and PASS.",
+          "PWD": "530 Please login with USER and PASS.",
+          "TYPE A": "530 Please login with USER and PASS.",
+          "PASV": "530 Please login with USER and PASS."
+        },
+        "supported_commands": 0
+      },
+      "http": {
+        "GET": {
+          "status": 200,
+          "server": "nginx",
+          "content_length": 204
+        },
+        "POST": {
+          "status": 200,
+          "server": "nginx",
+          "content_length": 204
+        },
+        "PUT": {
+          "status": 501,
+          "server": "nginx",
+          "content_length": 352
+        },
+        "DELETE": {
+          "status": 501,
+          "server": "nginx",
+          "content_length": 352
+        },
+        "OPTIONS": {
+          "status": 200,
+          "server": "nginx",
+          "content_length": 0
+        },
+        "HEAD": {
+          "status": 200,
+          "server": "nginx",
+          "content_length": 0
+        },
+        "TRACE": {
+          "status": 501,
+          "server": "nginx",
+          "content_length": 352
+        },
+        "CONNECT": {
+          "status": 501,
+          "server": "nginx",
+          "content_length": 352
+        },
+        "weird_headers": {
+          "status": 200,
+          "accepted_headers": true
+        }
+      },
+      "sip": {}
+    },
+    "Memory & Performance": {
+      "connection_timing": [],
+      "concurrent_connections": {
+        "successful": 10,
+        "total": 10
+      }
+    },
+    "Application Fingerprinting": {
+      "http_stack": {
+        "server": "nginx",
+        "powered_by": "",
+        "date_format": "",
+        "header_order": [
+          "Server",
+          "Content-Type",
+          "Content-Length",
+          "Connection"
+        ],
+        "accept_ranges": "",
+        "connection": "close"
+      },
+      "tls": {
+        "443": {
+          "tls_version": "TLSv1.3",
+          "cipher": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "cert_issuer": null,
+          "cert_subject": null,
+          "cert_serial": null
+        },
+        "9930": {
+          "error": "[Errno 111] Connection refused"
+        }
+      },
+      "banners": {
+        "21": "220 DiskStation FTP server ready.",
+        "22": null,
+        "23": null,
+        "80": null,
+        "443": null,
+        "445": null,
+        "9930": null
+      }
+    },
+    "Dionaea-Specific Tests": {
+      "download_directory": 404,
+      "api_endpoints": {
+        "/stats": {
+          "error": "connection failed"
+        },
+        "/files": {
+          "error": "connection failed"
+        },
+        "/connections": {
+          "error": "connection failed"
+        },
+        "/downloads": {
+          "error": "connection failed"
+        },
+        "/api": {
+          "error": "connection failed"
+        }
+      },
+      "vulnerability_emulation": {
+        "ftp_user_overflow": {
+          "responded": true,
+          "crashed": false
+        },
+        "http_directory_traversal": {
+          "responded": true,
+          "response_code": "b'404'"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260109_215259",
+  "scan_results": {
+    "Banner Analysis": {
+      "banner": "SSH-2.0-OpenSSH",
+      "response_time": 0.030445098876953125,
+      "is_known_cowrie": false,
+      "version_too_new": false,
+      "has_debian_string": false,
+      "has_ubuntu_string": false,
+      "banner_length": 15
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "error": "'NoneType' object has no attribute 'get'"
+    },
+    "Authentication Behavior": {
+      "max_attempts": 7,
+      "auth_exceptions": [],
+      "timing_patterns": [
+        0.00732731819152832,
+        0.008439064025878906,
+        0.006334781646728516,
+        0.0062296390533447266,
+        0.0063021183013916016,
+        0.006094694137573242,
+        0.006015777587890625
+      ],
+      "consistent_timing": true
+    },
+    "Service Fingerprinting": {
+      "2222": "SSH-2.0-OpenSSH\r\n",
+      "3306": "8.0.29\n",
+      "80": "HTTP/1.0 200 OK\r\nContent-Type: text/html\r\nServer: Apache/2.4.53 (Debian)\r\nX-Powered-By: PHP/7.4.29\r\n",
+      "8080": "HTTP/1.0 401 Unauthorized\r\nServer: Apache\r\nWww-Authenticate: Basic\r\nDate: Fri, 09 Jan 2026 20:52:54 "
+    },
+    "Protocol Anomalies": [
+      "responded_to_invalid_ssh",
+      "responded_to_garbage"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 1.4448232832364737e-10,
+      "response_consistency": true,
+      "latency_patterns": [
+        {
+          "connect": 8.034706115722656e-05,
+          "banner": 0.00013637542724609375,
+          "total": 0.0002167224884033203
+        },
+        {
+          "connect": 7.724761962890625e-05,
+          "banner": 0.00012421607971191406,
+          "total": 0.0002014636993408203
+        },
+        {
+          "connect": 9.560585021972656e-05,
+          "banner": 0.00011777877807617188,
+          "total": 0.00021338462829589844
+        },
+        {
+          "connect": 7.2479248046875e-05,
+          "banner": 0.00011038780212402344,
+          "total": 0.00018286705017089844
+        },
+        {
+          "connect": 9.202957153320312e-05,
+          "banner": 0.00011658668518066406,
+          "total": 0.0002086162567138672
+        }
+      ]
+    },
+    "Algorithm Testing": {
+      "error": "argument of type 'NoneType' is not iterable"
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {
+        "help_command": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "question_mark": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "empty_command": {
+          "error": ""
+        },
+        "cowrie_specific": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        },
+        "long_output": {
+          "output": "command not found\n",
+          "error": "",
+          "has_output": true
+        }
+      },
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": true
+    },
+    "Web Interface Check": {
+      "http_80/": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html",
+          "Server": "Apache/2.4.53 (Debian)",
+          "X-Powered-By": "PHP/7.4.29",
+          "Date": "Fri, 09 Jan 2026 20:52:58 GMT",
+          "Content-Length": "115"
+        }
+      }
+    },
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)"
+      }
+    },
+    "Command Execution Test": {
+      "success": true,
+      "username": "root",
+      "password": "root",
+      "commands": {
+        "uname": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "id": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "pwd": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "ls": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "ps": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "whoami": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "fake_command": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        },
+        "honeypot_check": {
+          "output": "command not found",
+          "error": "",
+          "return_code": 0,
+          "output_length": 17
+        }
+      }
+    }
+  },
+  "analysis": {
+    "honeypot_score": 15,
+    "max_score": 23,
+    "confidence": 65,
+    "indicators": [
+      "Excessive login attempts allowed",
+      "Artificial timing patterns detected",
+      "Multiple suspicious services open",
+      "Responded to invalid SSH protocol",
+      "Responded to garbage data",
+      "Artificial traffic patterns detected",
+      "Accepted default credentials in behavioral test",
+      "Web management interface detected",
+      "Command execution successful with default credentials"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 2,
+      "kex_score": 0,
+      "service_score": 2,
+      "protocol_score": 2,
+      "traffic_score": 2,
+      "algo_score": 0,
+      "behavior_score": 2,
+      "web_score": 1,
+      "ssl_score": 0,
+      "cmd_score": 2
+    },
+    "likely_honeypot": true,
+    "certain_honeypot": true
+  }
+}

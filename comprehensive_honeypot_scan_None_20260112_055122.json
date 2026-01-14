@@ -1,0 +1,143 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260112_055122",
+  "scan_results": {
+    "Banner Analysis": {
+      "error": "[Errno 111] Connection refused"
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "error": "[Errno 111] Connection refused",
+      "kex_time": 0
+    },
+    "Authentication Behavior": {
+      "max_attempts": 0,
+      "auth_exceptions": [
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.3",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.3",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.3",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.3",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.3"
+      ],
+      "timing_patterns": [],
+      "consistent_timing": true,
+      "all_failed": true
+    },
+    "Service Fingerprinting": {
+      "21": "220 DiskStation FTP server ready.\r\n",
+      "3306": "4\u0000\u0000\u0000\n5.7.16\u0000\u0000\u0000\u0012gaaaaaaaa\u0000,!\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000            \u0000",
+      "443": "No banner",
+      "80": "HTTP/1.1 200 OK\r\n",
+      "23": "No banner"
+    },
+    "Protocol Anomalies": [
+      "protocol_test_error: [Errno 111] Connection refused"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 0,
+      "response_consistency": false,
+      "latency_patterns": [
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        }
+      ],
+      "successful_connections": 0
+    },
+    "Algorithm Testing": {
+      "weak_ssh1_support": false,
+      "no_key_exchange": false
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {},
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": false
+    },
+    "Web Interface Check": {
+      "http_80/": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Content-Type": "text/html; charset=ascii",
+          "Content-Length": "204",
+          "Connection": "close"
+        }
+      },
+      "https_443/": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Content-Type": "text/html; charset=ascii",
+          "Content-Length": "204",
+          "Connection": "close"
+        }
+      }
+    },
+    "SSL Certificate Analysis": {
+      "443": {
+        "certificate": {},
+        "cipher": [
+          "TLS_AES_256_GCM_SHA384",
+          "TLSv1.3",
+          256
+        ],
+        "has_certificate": true,
+        "is_self_signed": false,
+        "subject": null
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[Errno 111] Connection refused"
+      }
+    },
+    "Command Execution Test": {
+      "success": false
+    }
+  },
+  "analysis": {
+    "honeypot_score": 5,
+    "max_score": 30,
+    "confidence": 16,
+    "indicators": [
+      "Artificial timing patterns in authentication",
+      "Multiple services running (common for honeypots)",
+      "Web management interface detected",
+      "Linux TTL detected (common for honeypots)"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 0,
+      "kex_score": 0,
+      "service_score": 2,
+      "protocol_score": 0,
+      "traffic_score": 0,
+      "algo_score": 0,
+      "behavior_score": 0,
+      "cmd_score": 0,
+      "web_score": 1,
+      "ssl_score": 0,
+      "ttl_score": 1
+    },
+    "likely_honeypot": false,
+    "certain_honeypot": false,
+    "is_cowrie": false
+  }
+}

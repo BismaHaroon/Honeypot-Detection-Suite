@@ -1,0 +1,152 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260109_230450",
+  "scan_results": {
+    "Banner Analysis": {
+      "banner": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7",
+      "response_time": 0.002311229705810547,
+      "is_known_cowrie": false,
+      "version_too_new": false,
+      "has_debian_string": true,
+      "has_ubuntu_string": false,
+      "banner_length": 38
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "error": "'NoneType' object has no attribute 'get'"
+    },
+    "Authentication Behavior": {
+      "max_attempts": 7,
+      "auth_exceptions": [],
+      "timing_patterns": [
+        1.0085837841033936,
+        0.007637500762939453,
+        1.044888973236084,
+        1.009110927581787,
+        1.0088560581207275,
+        1.0093348026275635,
+        1.0089435577392578
+      ],
+      "consistent_timing": false
+    },
+    "Service Fingerprinting": {
+      "2222": "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7\r\n"
+    },
+    "Protocol Anomalies": [
+      "responded_to_invalid_ssh"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 9.212053555529565e-09,
+      "response_consistency": true,
+      "latency_patterns": [
+        {
+          "connect": 8.96453857421875e-05,
+          "banner": 0.001085519790649414,
+          "total": 0.0011751651763916016
+        },
+        {
+          "connect": 7.581710815429688e-05,
+          "banner": 0.0012574195861816406,
+          "total": 0.0013332366943359375
+        },
+        {
+          "connect": 7.963180541992188e-05,
+          "banner": 0.001241445541381836,
+          "total": 0.0013210773468017578
+        },
+        {
+          "connect": 7.987022399902344e-05,
+          "banner": 0.0012464523315429688,
+          "total": 0.0013263225555419922
+        },
+        {
+          "connect": 7.152557373046875e-05,
+          "banner": 0.0014069080352783203,
+          "total": 0.001478433609008789
+        }
+      ]
+    },
+    "Algorithm Testing": {
+      "error": "argument of type 'NoneType' is not iterable"
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {},
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": false
+    },
+    "Web Interface Check": {},
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)"
+      }
+    },
+    "Command Execution Test": {
+      "success": true,
+      "username": "root",
+      "password": "password",
+      "commands": {
+        "uname": {
+          "error": "Channel closed."
+        },
+        "id": {
+          "error": "Channel closed."
+        },
+        "pwd": {
+          "error": "Channel closed."
+        },
+        "ls": {
+          "error": "Channel closed."
+        },
+        "ps": {
+          "error": "Channel closed."
+        },
+        "whoami": {
+          "error": "Channel closed."
+        },
+        "fake_command": {
+          "error": "Channel closed."
+        },
+        "honeypot_check": {
+          "error": "Channel closed."
+        }
+      }
+    }
+  },
+  "analysis": {
+    "honeypot_score": 8,
+    "max_score": 23,
+    "confidence": 34,
+    "indicators": [
+      "Excessive login attempts allowed",
+      "Responded to invalid SSH protocol",
+      "Artificial traffic patterns detected",
+      "Command execution successful with default credentials"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 2,
+      "kex_score": 0,
+      "service_score": 0,
+      "protocol_score": 2,
+      "traffic_score": 2,
+      "algo_score": 0,
+      "behavior_score": 0,
+      "web_score": 0,
+      "ssl_score": 0,
+      "cmd_score": 2
+    },
+    "likely_honeypot": true,
+    "certain_honeypot": false
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "target": "None:2222",
+  "timestamp": "20260112_230005",
+  "scan_results": {
+    "Banner Analysis": {
+      "error": "[Errno 111] Connection refused"
+    },
+    "TTL Analysis": {
+      "ttl": 64,
+      "likely_os": "Linux/Unix",
+      "original_ttl": 64
+    },
+    "Key Exchange": {
+      "error": "[Errno 111] Connection refused",
+      "kex_time": 0
+    },
+    "Authentication Behavior": {
+      "max_attempts": 0,
+      "auth_exceptions": [
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.1",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.1",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.1",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.1",
+        "[Errno None] Unable to connect to port 2222 on 192.168.2.1"
+      ],
+      "timing_patterns": [],
+      "consistent_timing": true,
+      "all_failed": true
+    },
+    "Service Fingerprinting": {},
+    "Protocol Anomalies": [
+      "protocol_test_error: [Errno 111] Connection refused"
+    ],
+    "Traffic Analysis": {
+      "packet_timing_variance": 0,
+      "response_consistency": false,
+      "latency_patterns": [
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        },
+        {
+          "error": "[Errno 111] Connection refused"
+        }
+      ],
+      "successful_connections": 0
+    },
+    "Algorithm Testing": {
+      "weak_ssh1_support": false,
+      "no_key_exchange": false
+    },
+    "Behavioral Analysis": {
+      "shell_behavior": {},
+      "filesystem_emulation": {},
+      "command_responses": {},
+      "auth_success": false
+    },
+    "Web Interface Check": {},
+    "SSL Certificate Analysis": {
+      "443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "8443": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "2222": {
+        "error": "[Errno 111] Connection refused"
+      }
+    },
+    "Command Execution Test": {
+      "success": false
+    }
+  },
+  "analysis": {
+    "honeypot_score": 2,
+    "max_score": 30,
+    "confidence": 6,
+    "indicators": [
+      "Artificial timing patterns in authentication",
+      "Linux TTL detected (common for honeypots)"
+    ],
+    "details": {
+      "banner_score": 0,
+      "auth_score": 0,
+      "kex_score": 0,
+      "service_score": 0,
+      "protocol_score": 0,
+      "traffic_score": 0,
+      "algo_score": 0,
+      "behavior_score": 0,
+      "cmd_score": 0,
+      "web_score": 0,
+      "ssl_score": 0,
+      "ttl_score": 1
+    },
+    "likely_honeypot": false,
+    "certain_honeypot": false,
+    "is_cowrie": false
+  }
+}

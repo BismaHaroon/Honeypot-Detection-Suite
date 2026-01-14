@@ -1,0 +1,149 @@
+{
+  "target": "192.168.2.4",
+  "timestamp": "20260109_215934",
+  "advanced_analysis": {
+    "advanced_score": 2,
+    "max_score": 50,
+    "confidence": 4,
+    "likelihood": "VERY LOW - Unlikely to be Dionaea",
+    "strong_indicators": [],
+    "weak_indicators": [
+      "Responds to http_directory_traversal without crashing"
+    ],
+    "total_indicators": 1
+  },
+  "raw_results": {
+    "Deep Protocol Analysis": {
+      "smb": {
+        "test_0": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "test_1": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "test_2": {
+          "error": "[Errno 111] Connection refused"
+        }
+      },
+      "ftp": {
+        "error": "[Errno 111] Connection refused"
+      },
+      "http": {
+        "GET": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "POST": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "PUT": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "DELETE": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "OPTIONS": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "HEAD": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 0
+        },
+        "TRACE": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "CONNECT": {
+          "status": 200,
+          "server": "Apache/2.4.53 (Debian)",
+          "content_length": 115
+        },
+        "weird_headers": {
+          "status": 200,
+          "accepted_headers": true
+        }
+      },
+      "sip": {}
+    },
+    "Memory & Performance": {
+      "connection_timing": [],
+      "concurrent_connections": {
+        "successful": 0,
+        "total": 10
+      }
+    },
+    "Application Fingerprinting": {
+      "http_stack": {
+        "server": "Apache/2.4.53 (Debian)",
+        "powered_by": "PHP/7.4.29",
+        "date_format": "Fri, 09 Jan 2026 20:59:30 GMT",
+        "header_order": [
+          "Content-Type",
+          "Server",
+          "X-Powered-By",
+          "Date",
+          "Content-Length"
+        ],
+        "accept_ranges": "",
+        "connection": ""
+      },
+      "tls": {
+        "443": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "9930": {
+          "error": "[Errno 111] Connection refused"
+        }
+      },
+      "banners": {
+        "21": null,
+        "22": "SSH-2.0-OpenSSH",
+        "23": null,
+        "80": null,
+        "443": null,
+        "445": null,
+        "9930": null
+      }
+    },
+    "Dionaea-Specific Tests": {
+      "download_directory": 500,
+      "api_endpoints": {
+        "/stats": {
+          "error": "connection failed"
+        },
+        "/files": {
+          "error": "connection failed"
+        },
+        "/connections": {
+          "error": "connection failed"
+        },
+        "/downloads": {
+          "error": "connection failed"
+        },
+        "/api": {
+          "error": "connection failed"
+        }
+      },
+      "vulnerability_emulation": {
+        "ftp_user_overflow": {
+          "error": "[Errno 111] Connection refused"
+        },
+        "http_directory_traversal": {
+          "responded": true,
+          "response_code": "b'301'"
+        }
+      }
+    }
+  }
+}
