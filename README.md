@@ -38,3 +38,16 @@ chmod +x setup_test_environment.sh
 
 # Install dependencies
 pip install -r requirements.txt
+
+### **Usage**
+# Test a single target for Cowrie honeypot
+python detector.py 192.168.1.100 cowrie
+
+# Test for Snare honeypot (web)
+python detector.py example.com snare
+
+# Test for Dionaea honeypot
+python detector.py 192.168.1.101 dionaea
+
+# Test for Beelzebub honeypot
+python detector.py 192.168.1.102 beelzebub
